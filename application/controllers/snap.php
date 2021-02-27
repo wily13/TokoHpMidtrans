@@ -39,43 +39,30 @@ class Snap extends CI_Controller {
 
     public function token()
     {
-		$keranjang			= $this->Product_Model->getallcart();
-		$grossamount		= $this->input->get('amount');
-
-		$item_details		= array();
-		foreach ($keranjang as $krjg) {
-			$item_details[] = [
-				'id'		=> $krjg['id'],
-				'price'		=> $krjg['price'],
-				'quantity'	=> $krjg['jumlah'],
-				'name'		=> $krjg['product']
-			];
-		}
-
 		// Required
 		$transaction_details = array(
 		  'order_id' => rand(),
-		  'gross_amount' => $grossamount, // no decimal allowed for creditcard
+		  'gross_amount' => 94000, // no decimal allowed for creditcard
 		);
 
-		// // Optional
-		// $item1_details = array(
-		//   'id' => 'a1',
-		//   'price' => 18000,
-		//   'quantity' => 3,
-		//   'name' => "Apple"
-		// );
+		// Optional
+		$item1_details = array(
+		  'id' => 'a1',
+		  'price' => 18000,
+		  'quantity' => 3,
+		  'name' => "Apple"
+		);
 
-		// // Optional
-		// $item2_details = array(
-		//   'id' => 'a2',
-		//   'price' => 20000,
-		//   'quantity' => 2,
-		//   'name' => "Orange"
-		// );
+		// Optional
+		$item2_details = array(
+		  'id' => 'a2',
+		  'price' => 20000,
+		  'quantity' => 2,
+		  'name' => "Orange"
+		);
 
-		// // Optional
-		// $item_details = array ($item1_details, $item2_details);
+		// Optional
+		$item_details = array ($item1_details, $item2_details);
 
 		// Optional
 		$billing_address = array(
@@ -137,11 +124,6 @@ class Snap extends CI_Controller {
 
     public function finish()
     {
-    	$keranjang			= $this->Product_Model->getallcart();
-		foreach ($keranjang as $krjg) {
-			$this->db->update('tr_cart', ['status' => 1], ['id' => $krjg['id']]);
-		}
-
 		$result = json_decode($this->input->post('result_data'));
 		echo 'RESULT <br><pre>';
 		var_dump($result);
