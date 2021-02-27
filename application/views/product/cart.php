@@ -134,10 +134,12 @@
 					amount: amount
 				},
 
-				success: function (data) {
+				success: function (data, url) {
 					//location = data;
 
 					console.log('token = ' + data);
+					console.log('base = ' + '<?= base_url() ?>');
+					console.log('site = ' + '<?= site_url() ?>');
 
 					var resultType = document.getElementById('result-type');
 					var resultData = document.getElementById('result-data');
