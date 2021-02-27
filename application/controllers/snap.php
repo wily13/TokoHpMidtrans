@@ -34,7 +34,13 @@ class Snap extends CI_Controller {
 
     public function index()
     {
-    	$this->load->view('checkout_snap');
+    	// $this->load->view('checkout_snap');
+
+		$data = [
+            'semuaproduk'   => $this->Product_Model->getallproduk(),
+            'keranjang'     => $this->Product_Model->getallcart()
+        ];
+        $this->load->view('product/cart', $data);
     }
 
     public function token()

@@ -2,9 +2,11 @@
 <title>Checkout</title>
 
 <head>
-	<script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
-		data-client-key="SB-Mid-client-gyhpBKc6ndA2IJbT"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	
 </head>
 
 <body>
@@ -16,6 +18,11 @@
 	</form>
 
 	<button id="pay-button">Pay!</button>
+
+	<script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
+		data-client-key="SB-Mid-client-gyhpBKc6ndA2IJbT"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	
 	<script type="text/javascript">
 		$('#pay-button').click(function (event) {
 			event.preventDefault();
