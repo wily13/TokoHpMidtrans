@@ -1,4 +1,6 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php 
+//if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 // header('Access-Control-Allow-Origin: *');
 // header("Access-Control-Allow-Methods:GET,OPTIONS");
@@ -29,18 +31,11 @@ class Snap extends CI_Controller {
 		$this->load->library('midtrans');
 		$this->midtrans->config($params);
 		$this->load->helper('url');	
-		$this->load->model('Product_Model');
     }
 
     public function index()
     {
-    	// $this->load->view('checkout_snap');
-
-		$data = [
-            'semuaproduk'   => $this->Product_Model->getallproduk(),
-            'keranjang'     => $this->Product_Model->getallcart()
-        ];
-        $this->load->view('product/cart', $data);
+    	$this->load->view('checkout_snap');
     }
 
     public function token()
