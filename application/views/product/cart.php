@@ -5,7 +5,7 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
@@ -68,7 +68,7 @@
 	</div>
 	<!-- Button trigger modal -->
 
-	<form id="payment-form" method="post" action="<?= base_url() ?>/snap_product/finish">
+	<form id="payment-form" method="post" action="<?= site_url() ?>/snap_product/finish">
 		<input type="hidden" name="result_type" id="result-type" value=""></div>
 		<input type="hidden" name="result_data" id="result-data" value=""></div>
 	</form>
@@ -79,7 +79,7 @@
 	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
 		data-backdrop="static">
 		<div class="modal-dialog">
-			<form action="<?= base_url('product/simpan') ?>" method="POST">
+			<form action="<?= site_url('product/simpan') ?>" method="POST">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="exampleModalLabel">Tambah produk</h5>
@@ -129,7 +129,7 @@
 			$(this).attr("disabled", "disabled");
 
 			$.ajax({
-				url: '<?= base_url() ?>snap_product/token',
+				url: '<?= site_url() ?>snap_product/token',
 				cache: false,
 				data: {
 					amount: amount

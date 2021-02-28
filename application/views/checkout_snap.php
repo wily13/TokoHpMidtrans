@@ -12,7 +12,7 @@
 <body>
 
 
-	<form id="payment-form" method="post" action="<?=base_url()?>/snap/finish">
+	<form id="payment-form" method="post" action="<?= site_url() ?>/snap/finish">
 		<input type="hidden" name="result_type" id="result-type" value=""></div>
 		<input type="hidden" name="result_data" id="result-data" value=""></div>
 	</form>
@@ -22,14 +22,14 @@
 	<script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
 		data-client-key="SB-Mid-client-gyhpBKc6ndA2IJbT"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	
+
 	<script type="text/javascript">
 		$('#pay-button').click(function (event) {
 			event.preventDefault();
 			$(this).attr("disabled", "disabled");
 
 			$.ajax({
-				url: '<?=base_url()?>/snap/token',
+				url: '<?= site_url() ?>/snap/token',
 				cache: false,
 
 				success: function (data) {
