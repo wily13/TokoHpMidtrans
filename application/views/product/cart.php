@@ -79,7 +79,7 @@
 	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
 		data-backdrop="static">
 		<div class="modal-dialog">
-			<form action="<?= site_url('product/simpan') ?>" method="POST">
+			<form action="<?= base_url('product/simpan') ?>" method="POST">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="exampleModalLabel">Tambah produk</h5>
@@ -132,7 +132,7 @@
 			console.log('site = ' + '<?= site_url() ?>');
 
 			$.ajax({
-				url: '<?= site_url() ?>/snap_product/token',
+				url: '<?= base_url() ?>/snap_product/token',
 				cache: false,
 				data: {
 					amount: amount
