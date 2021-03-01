@@ -81,7 +81,7 @@
 	</div>
 	<!-- Button trigger modal -->
 
-	<form id="payment-form" method="post" action="<?= site_url() ?>/snap_product/finish">
+	<form id="payment-form" method="post" action="<?= site_url() ?>/Snap_Product/finish">
 		<input type="hidden" name="result_type" id="result-type" value=""></div>
 		<input type="hidden" name="result_data" id="result-data" value=""></div>
 	</form>
@@ -92,7 +92,7 @@
 	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
 		data-backdrop="static">
 		<div class="modal-dialog">
-			<form action="<?= site_url('product/simpan') ?>" method="POST">
+			<form action="<?= site_url('Snap_Product/simpan') ?>" method="POST">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="exampleModalLabel">Tambah produk</h5>
