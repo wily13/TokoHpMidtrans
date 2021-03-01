@@ -92,7 +92,7 @@
 	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
 		data-backdrop="static">
 		<div class="modal-dialog">
-			<form action="<?= site_url('Snap_Product/simpan') ?>" method="POST">
+			<form action="<?= site_url('product/simpan') ?>" method="POST">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="exampleModalLabel">Tambah produk</h5>
