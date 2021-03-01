@@ -29,7 +29,7 @@
 			$(this).attr("disabled", "disabled");
 
 			$.ajax({
-				url: '<?= site_url() ?>/snap/token',
+				url: 'https://tokohp.herokuapp.com//snap/token',
 				cache: false,
 
 				success: function (data) {
