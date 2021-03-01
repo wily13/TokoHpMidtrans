@@ -132,7 +132,7 @@
 			console.log('site = ' + '<?= site_url() ?>');
 
 			$.ajax({
-				url: '<?= site_url() ?>//snap_product/token',
+				url: '<?= site_url() ?>/snap_product/token',
 				cache: false,
 				data: {
 					amount: amount
