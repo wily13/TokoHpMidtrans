@@ -127,10 +127,7 @@
 			var amount = $(this).data('amount')
 			event.preventDefault();
 			$(this).attr("disabled", "disabled");
-
-			console.log('base = ' + '<?= base_url() ?>');
-			console.log('site = ' + '<?= site_url() ?>');
-
+			
 			$.ajax({
 				url: '<?= site_url() ?>/snap/token',
 				cache: false,
