@@ -37,4 +37,11 @@ class Product extends CI_Controller
         }
         redirect('product');
     }
+
+    public function delete($id)
+    {
+        $this->Product_Model->deleteCartById($id);
+        $this->session->set_flashdata('message', 'Data keranjang berhasil di hapus');
+        return redirect()->to('product');
+    }
 }

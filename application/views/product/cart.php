@@ -23,7 +23,10 @@
 				<button type="button" class="btn btn-sm btn-primary mb-2" data-toggle="modal"
 					data-target="#exampleModal">Tambah Barang</button>
 				<br>
-				<?= $this->session->flashdata('message'); ?>
+
+				<div class="alert alert-info alert-dismissible fade show" role="alert">
+					<?= $this->session->flashdata('message'); ?>
+				</div>
 
 				<table class="table table-hover">
 					<thead>
@@ -32,6 +35,7 @@
 							<th scope="col">Nama Barang</th>
 							<th scope="col">Harga</th>
 							<th scope="col">Sub Total</th>
+							<th scope="col">Action</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -46,10 +50,19 @@
 							<td><?= $krjg['product']; ?> x <?= $krjg['jumlah']; ?></td>
 							<td><?= $krjg['price']; ?></td>
 							<td><?= $krjg['price'] * $krjg['jumlah']; ?></td>
+							<td>
+								<button type="button" class="btn btn-sm btn-info" data-toggle="modal"
+									data-target="#exampleModal">Edit</button>
+
+								<form action="product/<?= $krjg['id'] ?>" method="POST" class="d-inline">
+									<input type="hidden" name="_method" value="DELETE">
+									<button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+								</form>
+							</td>
 						</tr>
 						<?php endforeach; ?>
 						<tr>
-							<td colspan="3">Total Belanja</td>
+							<td colspan="4">Total Belanja</td>
 							<td>Rp. <?= $total; ?></td>
 						</tr>
 						<?php else : ?>
@@ -127,9 +140,9 @@
 			var amount = $(this).data('amount')
 			event.preventDefault();
 			$(this).attr("disabled", "disabled");
-			
+
 			$.ajax({
-				url: '<?= site_url() ?>/snap/token',
+				url: '<?= site_url() ?>/snap_product/token',
 				cache: false,
 				data: {
 					amount: amount

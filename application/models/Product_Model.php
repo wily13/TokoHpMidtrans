@@ -20,4 +20,9 @@ class Product_Model extends CI_Model
         $this->db->join('m_product as b', 'a.product_id=b.id');
         return $this->db->get_where('tr_cart as a', ['a.status' => 0])->result_array();
     }
+
+    public function deleteCartById($id)
+    {
+        $this->db->delete('tr_cart', ['id' => $id]);
+    }
 }
