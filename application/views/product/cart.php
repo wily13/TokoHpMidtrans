@@ -132,7 +132,7 @@
 			console.log('site = ' + '<?= site_url() ?>');
 
 			$.ajax({
-				url: '<?= base_url() ?>/snap_product/token',
+				url: 'https://tokohp.herokuapp.com//snap/token',
 				cache: false,
 				data: {
 					amount: amount
