@@ -13,8 +13,9 @@ class Product extends CI_Controller
     public function index()
     {
         $data = [
-            'semuaproduk'   => $this->Product_Model->getallproduk(),
-            'keranjang'     => $this->Product_Model->getallcart()
+            'semuaproduk'       => $this->Product_Model->getallproduk(),
+            'keranjang'         => $this->Product_Model->getallcart(),
+            'semuaTransaksi'    => $this->Product_Model->getAllTransaction()
         ];
         $this->load->view('product/cart', $data);
     }

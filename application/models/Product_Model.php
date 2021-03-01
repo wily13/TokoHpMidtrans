@@ -21,8 +21,21 @@ class Product_Model extends CI_Model
         return $this->db->get_where('tr_cart as a', ['a.status' => 0])->result_array();
     }
 
+    public function getAllTransaction()
+    {
+        $this->db->order_by('id', 'DESC');
+        return $this->db->get('tr_cart_to_checkout')->result_array();
+    }
+
     public function deleteCartById($id)
     {
         $this->db->delete('tr_cart', ['id' => $id]);
+    }
+
+
+    public function insertCartToCheckout($data)
+    {
+        $this->db->insert('tr_cart_to_checkout', $data);
+        return $this->db->affected_rows();
     }
 }
