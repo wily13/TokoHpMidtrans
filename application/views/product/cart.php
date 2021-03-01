@@ -128,8 +128,11 @@
 			event.preventDefault();
 			$(this).attr("disabled", "disabled");
 
+			console.log('base = ' + '<?= base_url() ?>');
+			console.log('site = ' + '<?= site_url() ?>');
+
 			$.ajax({
-				url: '<?= site_url() ?>/snap_product/token',
+				url: '<?= site_url() ?>//snap_product/token',
 				cache: false,
 				data: {
 					amount: amount
@@ -139,8 +142,6 @@
 					//location = data;
 
 					console.log('token = ' + data);
-					console.log('base = ' + '<?= base_url() ?>');
-					console.log('site = ' + '<?= site_url() ?>');
 
 					var resultType = document.getElementById('result-type');
 					var resultData = document.getElementById('result-data');
