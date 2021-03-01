@@ -138,7 +138,7 @@
 					amount: amount
 				},
 
-				success: function (data, url) {
+				success: function (data) {
 					//location = data;
 
 					console.log('token = ' + data);
